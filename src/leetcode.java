@@ -22,8 +22,25 @@ public class leetcode {
         }
         return trappedwater;
     }
+
+    public static int buysellstock(int [] arr){
+        int buyprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for(int i=0; i<arr.length;i++){
+            if(buyprice<arr[i]){
+                int profit = arr[i]-buyprice;
+                maxprofit=Math.max(profit,maxprofit);
+            }
+            else{
+                buyprice=arr[i];
+            }
+        }
+        return maxprofit;
+    }
+
     public static void main(String[] args) {
         int arr[] = {4,2,0,6,3,2,5};
-        System.out.println(trappedrainwater(arr));
+//      System.out.println(trappedrainwater(arr));
+        System.out.println(buysellstock(arr));
     }
 }
