@@ -169,9 +169,31 @@ public class Arraysconcept {
         }
             return trappedwater;
     }
+    public static int buysellstock(int [] arr){
+        int maxprofit=Integer.MIN_VALUE;
+        int currprofit = 0;
+        int start = 0;
+        int end = 0;
+        int n =arr.length;
+        for (int i = 0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                currprofit = arr[j]-arr[i];
+                if(currprofit>maxprofit){
+                    maxprofit = currprofit;
+                    start = i;
+                    end = j;
+                }
+            }
+        }
+        if(maxprofit<0){
+            return 0;
+        }
+        System.out.println(start+" "+end);
+        return maxprofit;
+    }
     public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
-        int arr [] = {4,2,0,6,3,2,5};
+        int[] arr = {7,1,5,3,6,4};
         int key = 10;
 //        lsearch(arr,key);
 //        System.out.println(largest(arr));
@@ -184,6 +206,7 @@ public class Arraysconcept {
 //        System.out.println(prefixsum(arr));
 //        System.out.println(kadane(arr));
 //        System.out.println(maxSubArraySum(arr));
-        System.out.println(trappedrainwater(arr));
+//        System.out.println(trappedrainwater(arr));
+        System.out.println(buysellstock(arr));
     }
 }
