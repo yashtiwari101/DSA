@@ -152,13 +152,13 @@ public class Arraysconcept {
         int leftmax[]=new int [n];
         leftmax [0]=arr[0];
         for (int i=1;i<arr.length;i++){
-            leftmax[i] = Math.max(arr[i],arr[i-1]);
+            leftmax[i] = Math.max(arr[i],leftmax[i-1]);
         }
         //calculate right max boundary
         int rightmax []=new int [arr.length];
         rightmax[n-1]=arr[n-1];
         for(int i=n-2; i>=0; i--){
-            rightmax[i] = Math.max(arr[i],arr[i+1]);
+            rightmax[i] = Math.max(arr[i],rightmax[i+1]);
         }
         //loop for rainwater
         int trappedwater=0;
