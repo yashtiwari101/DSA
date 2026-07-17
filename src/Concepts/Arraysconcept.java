@@ -209,4 +209,5 @@ public class Arraysconcept {
 //        System.out.println(trappedrainwater(arr));
         System.out.println(buysellstock(arr));
     }
+
 }
