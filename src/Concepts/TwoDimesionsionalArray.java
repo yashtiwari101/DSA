@@ -43,6 +43,36 @@ public class TwoDimesionsionalArray {
         }
 
     }
+
+    public static void printdiagonal(int [][] arr){
+        int lsum = 0;
+        int rsum= 0;
+        for(int i=0;i<arr.length;i++){
+            lsum = lsum + arr[i][i];
+            rsum = rsum + arr[i][arr.length-i-1];
+        }
+        System.out.println(lsum+" "+rsum);
+    }
+
+    public static void staircaseserach(int[][]arr,int key){
+        int row = 0, col = arr[0].length-1;
+        while(row<arr.length && col>0){
+            if (arr[row][col]==key){
+                System.out.println("Key Found at "+row+","+col);
+                return;
+            }
+            else if (key<arr[row][col]){
+                col--;
+            }
+            else{
+                row++;
+            }
+        }
+        System.out.println("Key not present");
+        return;
+
+
+    }
     public static void main(String[] args) {
 //    int [][] arr = new int[3][3];
 //    Scanner sc = new Scanner(System.in);
@@ -60,7 +90,10 @@ public class TwoDimesionsionalArray {
 //            System.out.println();
 //        }
         int [] [] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-        printspiral(matrix);
+        int key = 14;
+//        printspiral(matrix);
+//        printdiagonal(matrix);
+        staircaseserach(matrix,key);
     }
 
 
