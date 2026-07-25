@@ -43,6 +43,18 @@ public class Bitmanipulation {
         int bitmask = (~0)<<i;
         return n & bitmask;
     }
+    public static int clearrangebits(int n, int i, int j){
+        int bitmask = ~(~((~0)<<(j-i))<<i);
+        return n & bitmask;
+    }
+    public static void checkpowerof2(int n){
+        if(n >0 && (n&(n-1))==0){
+            System.out.println("this is power of 2");
+        }
+        else{
+            System.out.println("its not in power of 2");
+        }
+    }
     public static void main(String[] args) {
 //        System.out.println(5 & 6);
 //        System.out.println(5 | 6);
@@ -55,7 +67,8 @@ public class Bitmanipulation {
 //        System.out.println(setithbit(10,2));
 //        System.out.println(clearithbit(10,1));
 //        System.out.println(updateithbit(10,2,1));
-        System.out.println(clearibits(15,2));
-
+//        System.out.println(clearibits(15,2));
+//        System.out.println(clearrangebits(10,2,4));
+        checkpowerof2(127);
     }
 }
