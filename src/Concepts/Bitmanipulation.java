@@ -35,6 +35,6 @@ public class Bitmanipulation {
 //        System.out.println(2>>1);
 //            primecheck(-6);
 //        System.out.println(ithbit(10,3));
-        System.out.println(setithbit(10,3));
+        System.out.println(setithbit(10,2));
     }
 }
