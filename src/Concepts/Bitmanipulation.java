@@ -55,6 +55,30 @@ public class Bitmanipulation {
             System.out.println("its not in power of 2");
         }
     }
+    public static int countsetbits(int n){
+        int count=0;
+        while(n>0){
+            if((n&(~1))!=n){     // 0111
+                count++;       //   1110
+                n=n>>1;
+            }
+            else {
+                n = n >> 1;
+            }
+        }
+        return count;
+    }
+    public static int fastexponent(int n, int p){
+        int ans = 1;
+        while(p>0){
+            if((p&1)!=0){
+                ans = ans*n;
+            }
+            n=n*n;
+            p=p>>1;
+        }
+        return ans;
+    }
     public static void main(String[] args) {
 //        System.out.println(5 & 6);
 //        System.out.println(5 | 6);
@@ -69,6 +93,9 @@ public class Bitmanipulation {
 //        System.out.println(updateithbit(10,2,1));
 //        System.out.println(clearibits(15,2));
 //        System.out.println(clearrangebits(10,2,4));
-        checkpowerof2(127);
+//        checkpowerof2(127);
+//        System.out.println(countsetbits(1));
+//        System.out.println(5<<3);
+        System.out.println(fastexponent(3,5));
     }
 }
